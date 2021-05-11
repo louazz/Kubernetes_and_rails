@@ -1,0 +1,27 @@
+
+
+<div class="container is-widescreen">
+  
+
+    <% if @post.avatar.attached?%>
+ <%= image_tag(@post.avatar , size: '900x1200', :class =>"image is-fullwidth") %>
+<%end%>
+
+  <div class="notification ">
+  <div class="post__container">
+    <span class="post__category"><%= @post.author %></span>
+    
+ 
+      <header>
+        
+        <h1 class="has-text-centered is-size-1 "><%= @post.title %></h1>
+        
+      </header>
+    
+      <p class="is-size-3"><%= @post.content %></p>
+      <time class="is-size-7 has-text-right"><%=@post.created_at %></time>
+   
+  
+<%= link_to 'Remove', @post, method: :delete, data: { confirm: 'Are you sure?' } , :class => "is-size-7 has-text-right"%>
+  </div>
+</div></div>

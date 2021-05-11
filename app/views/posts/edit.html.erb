@@ -1,0 +1,37 @@
+
+<div class="container is-max-desktop">
+  <div class="notification ">
+  <div class="columns is-mobile">
+  <div class="column is-three-fifths is-offset-one-fifth">
+<div class="is-size-1">Update a Post</div>
+				
+		
+				
+<%= form_with model: @post do |f| %>
+					
+					<div class="wrap-input100 validate-input m-b-16">
+					<%= f.text_field :title, autofocus: true, placeholder: "title" ,  class: "input is-large"%>
+						<span class="focus-input100"></span>
+					</div>
+					
+							
+					<div class="wrap-input100 validate-input m-b-16">
+          <%= f.text_area :content, placeholder: "content",class: "textarea is-large", row:"100"%>
+						<span class="focus-input100"></span>
+					</div>
+		<%= f.label :avatar %>
+<%= f.file_field :avatar %>		
+						
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn m-t-17">
+						   <%= f.submit "submit",class: "button is-large is-fullwidth" %>
+					</div>
+<% end %>
+				</div>
+			</div>
+		
+	</div>
+	
+</div></div></div></div>

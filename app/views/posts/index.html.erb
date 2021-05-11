@@ -1,0 +1,46 @@
+  <div class="notification">
+<div class="container is-max-desktop">
+
+  <div class="is-size-1">Blog</div>
+
+
+ <hr> <hr>
+<div class="columns is-desktop">
+ 
+   <% @posts.each do |post| %>
+ <div class="column">
+  
+      
+     
+          <div class="card is-dark">
+          <header class="card-header">
+  
+       <%= link_to post.title, post_path(post) ,class: "card-header-title "%>
+    
+
+  </header>
+
+   <div class="card-image">
+    <figure class="image is-4by3">
+     <% if post.avatar.attached?%>
+     <%= image_tag(post.avatar , size: '1280x960') %>
+ <%end%>
+   </figure>
+  </div>
+    <footer class="card-footer">
+    <%= link_to 'Edit', edit_post_path(post), method: 'get', class: "card-footer-item"%>
+   <%= link_to "Navigate", post_path(post), class: "card-footer-item" %>
+  <%= link_to 'Remove', post_path(post), method: 'delete', data: { confirm: 'Are you sure?' } , class: "card-footer-item"%>
+  </footer>
+</div>
+ 
+  </div>
+    
+  <% end %>
+
+</div>
+  <div class="columns is-mobile">
+  <div class="column is-three-fifths is-offset-one-fifth">
+ <%= link_to "Add a New post", new_post_path ,class: "button is-large is-fullwidth" %>
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete,class: "button is-large is-fullwidth" %>
+</div></div></div></div>
